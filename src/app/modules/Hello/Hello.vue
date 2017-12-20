@@ -7,18 +7,22 @@
         <div class="greeting">Hello {{name}}{{exclamationMarks}}</div>
         <button @click="decrement">-</button>
         <button @click="increment">+</button>
+        {{ aProp }} and {{ aSecondProp }}
+        <button @click="changeVal(5)">Modify value of 3712</button>
     </div>
 </template>
 
 <script lang="ts">
-import { Vue, Component, Prop } from "vue-property-decorator";
+import { Vue, Component, Prop, Emit } from "vue-property-decorator";
 import * as enthousiasm from "../../store/enthousiasm/enthousiasm";
 
 
 @Component({ name: "hello-component" })
 export default class HelloComponent extends Vue {
-    @Prop() name: string;
+    @Prop() aProp: string;
     @Prop() initialEnthusiasm: number;
+    @Prop() aSecondProp: number;
+    name: string = "World";
 
     enthusiasm = this.initialEnthusiasm;
 
@@ -27,6 +31,9 @@ export default class HelloComponent extends Vue {
             img: "./static/logo.png"                
         }
     }
+
+    @Emit('change')
+    changeVal(n: number) {  }
 
     increment() { 
         enthousiasm.dispatchEnthousiasmInc( this.$store );
