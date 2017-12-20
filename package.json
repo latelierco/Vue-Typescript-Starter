@@ -2,30 +2,42 @@
   "name": "typescript-vue-starter",
   "version": "1.0.0",
   "private": true,
-  "description": "",
+  "description": "Vue template written in TypeScript & designed for l'Atelier S.A.R.L",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "webpack-dev-server --config ./config/webpack.dev.js --env.development",
+    "build": "webpack --config ./config/webpack.prod.js --env.production"
   },
   "keywords": [],
   "author": {
-    "name": "Daniel Rosenwasser",
-    "url": "https://github.com/DanielRosenwasser"
+    "name": "Michaël Gungaram",
+    "url": "https://github.com/michael-gungaram"
   },
   "license": "Apache-2.0",
   "dependencies": {
-    "vue": "^2.5.2",
-    "vue-class-component": "^6.0.0",
+    "axios": "^0.17.1",
+    "localforage": "^1.5.5",
+    "vue": "^2.5.11",
+    "vue-class-component": "^6.1.2",
     "vue-property-decorator": "^6.0.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
-    "css-loader": "^0.28.1",
-    "ts-loader": "^2.0.3",
-    "typescript": "^2.3.2",
-    "vue-loader": "^12.0.3",
-    "vue-template-compiler": "^2.5.2",
-    "webpack": "^2.5.0"
+    "clean-webpack-plugin": "^0.1.17",
+    "copy-webpack-plugin": "^4.3.0",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.7.2",
+    "sass-loader": "^6.0.6",
+    "ts-loader": "^3.2.0",
+    "typescript": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.1.4",
+    "vue-loader": "^13.6.0",
+    "vue-template-compiler": "^2.5.11",
+    "vuex-typescript": "^3.0.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
   }
 }

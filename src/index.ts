@@ -1,21 +1,24 @@
 import Vue from "vue";
-import HelloComponent from "./components/Hello.vue";
-import HelloDecoratorComponent from "./components/HelloDecorator.vue";
+import Vuex from "vuex";
+import HelloPage from "./app/pages/Hello-Page.vue";
+import router from "./router/router";
+import { createStore } from "./app/store";
+
+Vue.use( Vuex );
+
+let store = createStore();
 
 let v = new Vue({
     el: "#app",
-    template: `
-    <div>
-        Name: <input v-model="name" type="text">
-        <h1>Hello Component</h1>
-        <hello-component :name="name" :initialEnthusiasm="5" />
-        <h1>Hello Decorator Component</h1>
-        <hello-decorator-component :name="name" :initialEnthusiasm="5" />
+    template: `        
+        <div class="main"> 
+            <router-view></router-view>
         </div>
     `,
-    data: { name: "World" },
+    store,
+    router,
+    data: { },
     components: {
-        HelloComponent,
-        HelloDecoratorComponent
+        HelloPage
     }
 });
