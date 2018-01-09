@@ -43,7 +43,12 @@ export default class HelloComponent extends Vue {
         enthousiasm.dispatchEnthousiasmDec( this.$store );
     }
 
+    addTwo(n: number): number {
+        return n + 2;
+    }
+
     get exclamationMarks() {
+        if( process.env.NODE_ENV === "test" ) return "";
         return Array( enthousiasm.readEnthousiasm( this.$store ) +1 ).join( "!" ); 
     }
 }
