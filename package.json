@@ -7,7 +7,8 @@
   "scripts": {
     "start:dev": "webpack-dev-server --config ./config/webpack.dev.js --env.development",
     "build": "webpack --config ./config/webpack.prod.js --env.production",
-    "test": "jest --config tests/jest.config.js --coverage"
+    "test:unit": "jest --config tests/jest.config.js --coverage",
+    "test:e2e": "testcafe chrome --color"
   },
   "keywords": [],
   "author": {
