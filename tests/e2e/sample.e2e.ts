@@ -24,5 +24,5 @@ test( "Logs with username, password", async t => {
         .click( increaseEl )
         .click( increaseEl )
         .click( increaseEl )
-        .expect( Selector(".greeting").textContent ).eql( "Hello World!!!" )
+        .expect( Selector(".greeting").textContent ).eql( "Hello World!!!!" )
 });
