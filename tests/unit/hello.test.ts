@@ -1,5 +1,5 @@
 let Vue = require("vue");
-let HelloComponent = require("../src/app/modules/Hello/Hello.vue");
+let HelloComponent = require("../../src/app/modules/Hello/Hello.vue");
 
 describe( "Sample", () => {
     it("Should works", () => {
