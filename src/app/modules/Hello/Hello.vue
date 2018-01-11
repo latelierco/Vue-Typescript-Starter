@@ -1,12 +1,12 @@
 <!-- src/components/HelloDecorator.vue -->
 <!-- This is an alternative way to define the Hello component using decorators -->
 <template>
-    <div>
+    <div class="howdy">
         <img :src="img">
         Name: <input v-model="name" type="text">
         <div class="greeting">Hello {{name}}{{exclamationMarks}}</div>
-        <button @click="decrement">-</button>
-        <button @click="increment">+</button>
+        <button id="decrease" @click="decrement">-</button>
+        <button id="increase" @click="increment">+</button>
         {{ aProp }} and {{ aSecondProp }}
         <button @click="changeVal(5)">Modify value of 3712</button>
     </div>
@@ -43,7 +43,12 @@ export default class HelloComponent extends Vue {
         enthousiasm.dispatchEnthousiasmDec( this.$store );
     }
 
+    addTwo(n: number): number {
+        return n + 2;
+    }
+
     get exclamationMarks() {
+        if( process.env.NODE_ENV === "test" ) return "";
         return Array( enthousiasm.readEnthousiasm( this.$store ) +1 ).join( "!" ); 
     }
 }

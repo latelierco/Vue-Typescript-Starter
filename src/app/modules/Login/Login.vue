@@ -1,8 +1,8 @@
 <template>
     <div class="login">
-        <input type="text" v-model="user.username">
-        <input type="password" v-model="user.password">
-        <button @click="login()">Login</button>
+        <input id="username" type="text" v-model="user.username">
+        <input id="password" type="password" v-model="user.password">
+        <button id="login" @click="login()">Login</button>
     </div>
 </template>
 <script lang="ts">
