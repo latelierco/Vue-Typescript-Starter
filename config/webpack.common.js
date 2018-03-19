@@ -1,10 +1,12 @@
-var path = require('path')
-var webpack = require('webpack')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const env = process.env.NODE_ENV;
 
 module.exports = {
+  mode: env || 'development',
   entry: { 
     app: './src/index.ts' 
   },

@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server --config ./config/webpack.dev.js --env.development",
-    "build": "webpack --config ./config/webpack.prod.js --env.production",
+    "build": "webpack --config ./config/webpack.prod.js --mode production",
     "test:unit": "jest --config tests/jest.config.js --coverage",
     "test:e2e": "testcafe chrome --color"
   },
@@ -42,7 +42,7 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.26.0",
-    "clean-webpack-plugin": "^0.1.17",
+    "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.1",
     "css-loader": "^0.28.7",
     "html-webpack-plugin": "^3.0.6",
